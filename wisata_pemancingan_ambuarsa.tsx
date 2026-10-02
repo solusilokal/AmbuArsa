@@ -54,12 +54,12 @@ const pageData = {
     { name: "Sewa Peralatan", desc: "Tersedia joran, reel, dan umpan racikan rahasia AmbuArsa.", image: "./images/katalog-peralatan.webp" }
   ],
   pricing: [
-    { item: "Tiket Galatama (Per Sesi)", price: "Rp 150.000" },
-    { item: "Kolam Kiloan - Ikan Nila", price: "Rp 35.000 / Kg" },
-    { item: "Kolam Kiloan - Ikan Mas", price: "Rp 45.000 / Kg" },
-    { item: "Sewa Joran Set", price: "Rp 30.000 / Hari" },
-    { item: "Umpan Racikan Khusus", price: "Rp 15.000 / Bks" },
-    { item: "Sewa Saung VIP (Kapasitas 10 Org)", price: "Rp 100.000 / 4 Jam" }
+    { item: "Tiket Galatama", price: "Rp 150.000", unit: "/ Sesi" },
+    { item: "Kolam Kiloan – Ikan Nila", price: "Rp 35.000", unit: "/ Kg" },
+    { item: "Kolam Kiloan – Ikan Mas", price: "Rp 45.000", unit: "/ Kg" },
+    { item: "Sewa Joran Set", price: "Rp 30.000", unit: "/ Hari" },
+    { item: "Umpan Racikan Khusus", price: "Rp 15.000", unit: "/ Bks" },
+    { item: "Sewa Saung VIP (10 Org)", price: "Rp 100.000", unit: "/ 4 Jam" }
   ],
   faq: [
     { q: "Apakah alat pancing harus bawa sendiri?", a: "Anda bisa membawa alat sendiri, namun kami juga menyediakan penyewaan alat pancing lengkap dengan harga terjangkau." },
@@ -372,9 +372,12 @@ export default function App() {
           <div className="bg-[#0E2841] rounded-2xl p-6 text-white shadow-lg">
             <ul className="flex flex-col gap-4">
               {pageData.pricing.map((p, idx) => (
-                <li key={idx} className="flex justify-between items-center border-b border-white/10 pb-3 last:border-0 last:pb-0">
-                  <span className="text-sm font-medium text-slate-200">{p.item}</span>
-                  <span className="text-sm font-bold text-[#D9A05B] whitespace-nowrap ml-4">{p.price}</span>
+                <li key={idx} className="flex justify-between items-center border-b border-white/10 pb-3 last:border-0 last:pb-0 gap-3">
+                  <span className="text-sm font-medium text-slate-200 flex-1">{p.item}</span>
+                  <div className="flex items-baseline justify-end gap-1.5 shrink-0 text-right">
+                    <span className="text-sm font-bold text-[#D9A05B] tabular-nums whitespace-nowrap">{p.price}</span>
+                    {p.unit && <span className="text-xs text-slate-300/80 font-normal whitespace-nowrap w-12 text-left">{p.unit}</span>}
+                  </div>
                 </li>
               ))}
             </ul>
