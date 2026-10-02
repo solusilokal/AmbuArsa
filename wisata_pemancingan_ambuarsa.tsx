@@ -33,8 +33,8 @@ const pageData = {
   address: "Jl. Pemancingan Alam No. 12, Area Rekreasi.",
   title: "Sensasi Tarikan Maksimal di Alam Asri",
   description: "AmbuArsa adalah destinasi wisata pemancingan keluarga dan galatama terbaik. Nikmati suasana alam yang sejuk, fasilitas lengkap, dan kolam yang penuh dengan ikan-ikan pilihan.",
-  profileImg: "Gemini_Generated_Image_t2wi4it2wi4it2wi.jpg", 
-  heroImg: "https://images.unsplash.com/photo-1512217730872-91f868c2c510?auto=format&fit=crop&q=80&w=800&h=1200",
+  profileImg: "./images/logo-ambuarsa.png", 
+  heroImg: "./images/hero-ambuarsa.jpg",
   links: {
     instagram: "https://www.instagram.com/solusilokal.id",
     maps: "https://www.google.com/maps/place/Palangka+Raya", 
